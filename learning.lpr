@@ -1,5 +1,17 @@
-program learning;
+{**********************************************************
+ This program is to learn
+ modern pascal using freepascal compiler
+ and lazarus id
 
+ The idea is to do a little trip
+ through the language to compare it with C and a bit with C++
+
+ Dont forget check some links:
+ https://wiki.freepascal.org/Lazarus_IDE_Shortcuts
+ https://wiki.freepascal.org/Lazarus_IDE_Tools
+***********************************************************}
+
+program learning;
 {
  This program is to learn
  modern pascal using freepascal compiler
@@ -12,8 +24,6 @@ program learning;
  https://wiki.freepascal.org/Lazarus_IDE_Shortcuts
  https://wiki.freepascal.org/Lazarus_IDE_Tools
 }
-
-{$mode delphi}//{$H+}{$J-}
 
 procedure inOut;
 var

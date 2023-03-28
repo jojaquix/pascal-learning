@@ -1,6 +1,7 @@
 program Win.Api.Windows;
 
 {$mode delphi}{$H+}
+{$apptype gui}
 
 uses
   Strings,
