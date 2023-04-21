@@ -16,6 +16,7 @@ begin
   case TheMessage of
     {upon getting the WM_DESTROY message, we exit the application}
     WM_DESTROY: begin
+      MessageBox(0,'About exit the windows app from lazarus', 'Message', MB_OK);
       PostQuitMessage(0);
       Exit;
     end;

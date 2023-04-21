@@ -1,38 +1,13 @@
 object Form1: TForm1
-  Left = 313
+  Left = 508
   Height = 484
-  Top = 231
+  Top = 194
   Width = 702
   Caption = 'Form1'
   ClientHeight = 484
   ClientWidth = 702
   OnCreate = FormCreate
   LCLVersion = '2.2.0.4'
-  object DBGrid1: TDBGrid
-    Left = 24
-    Height = 152
-    Top = 136
-    Width = 440
-    Color = clWindow
-    Columns = <    
-      item
-        Title.Caption = 'code'
-        Width = 50
-        FieldName = 'code'
-      end    
-      item
-        Title.Caption = 'name'
-        Width = 100
-        FieldName = 'name'
-      end    
-      item
-        Title.Caption = 'price'
-        Width = 100
-        FieldName = 'price'
-      end>
-    DataSource = DataSource1
-    TabOrder = 0
-  end
   object DBNavigator1: TDBNavigator
     Left = 24
     Height = 25
@@ -50,47 +25,63 @@ object Form1: TForm1
     ClientWidth = 241
     DataSource = DataSource1
     Options = []
+    TabOrder = 0
+  end
+  object DBGrid1: TDBGrid
+    Left = 8
+    Height = 272
+    Top = 64
+    Width = 192
+    Color = clWindow
+    Columns = <    
+      item
+        Title.Caption = 'dept_no'
+        FieldName = 'dept_no'
+      end    
+      item
+        Title.Caption = 'dept_name'
+        FieldName = 'dept_name'
+      end>
+    DataSource = DataSource1
     TabOrder = 1
   end
   object DBEdit1: TDBEdit
-    Left = 24
+    Left = 16
     Height = 23
-    Top = 33
+    Top = 16
     Width = 80
-    DataField = 'code'
+    DataField = 'dept_no'
     DataSource = DataSource1
-    MaxLength = 100
+    MaxLength = 4
     TabOrder = 2
   end
-  object DBEdit2: TDBEdit
-    Left = 24
-    Height = 23
-    Top = 88
-    Width = 184
-    DataField = 'code'
-    DataSource = DataSource1
-    MaxLength = 100
+  object DBGrid2: TDBGrid
+    Left = 232
+    Height = 264
+    Top = 64
+    Width = 352
+    Color = clWindow
+    Columns = <>
+    DataSource = DataSource2
     TabOrder = 3
   end
-  object Label1: TLabel
-    Left = 24
-    Height = 15
-    Top = 16
-    Width = 38
-    Caption = 'Código'
-    Font.Color = clHotLight
-    Font.Style = [fsBold]
-    ParentFont = False
-  end
-  object Label2: TLabel
-    Left = 24
-    Height = 15
-    Top = 70
-    Width = 46
-    Caption = 'Nombre'
-    Font.Color = clHotLight
-    Font.Style = [fsBold]
-    ParentFont = False
+  object DBNavigator2: TDBNavigator
+    Left = 232
+    Height = 25
+    Top = 344
+    Width = 241
+    BevelOuter = bvNone
+    ChildSizing.EnlargeHorizontal = crsScaleChilds
+    ChildSizing.EnlargeVertical = crsScaleChilds
+    ChildSizing.ShrinkHorizontal = crsScaleChilds
+    ChildSizing.ShrinkVertical = crsScaleChilds
+    ChildSizing.Layout = cclLeftToRightThenTopToBottom
+    ChildSizing.ControlsPerLine = 100
+    ClientHeight = 25
+    ClientWidth = 241
+    DataSource = DataSource2
+    Options = []
+    TabOrder = 4
   end
   object ZConnection1: TZConnection
     ControlsCodePage = cCP_UTF8
@@ -99,29 +90,41 @@ object Form1: TForm1
       'AutoEncodeStrings=True'
       'controls_cp=CP_UTF8'
     )
+    Connected = True
     HostName = '192.168.56.101'
     Port = 65432
-    Database = 'sales'
+    Database = 'exdb1'
     User = 'postgres'
-    Password = 'postgres'
+    Password = 'admin'
     Protocol = 'postgresql'
     LibraryLocation = 'C:\development\pascal-learning\libpq.dll'
-    Left = 600
-    Top = 24
+    Left = 464
+    Top = 424
   end
   object DataSource1: TDataSource
-    AutoEdit = False
     DataSet = ZQuery1
-    Left = 496
-    Top = 24
+    Left = 368
+    Top = 424
   end
   object ZQuery1: TZQuery
     Connection = ZConnection1
+    Active = True
     SQL.Strings = (
-      'select cast (code as varchar (100)), cast (name as varchar (100)), price from products'
+      'select * from departments'
     )
     Params = <>
-    Left = 544
-    Top = 24
+    Left = 416
+    Top = 424
+  end
+  object ZTable1: TZTable
+    Connection = ZConnection1
+    TableName = 'public.employees'
+    Left = 520
+    Top = 424
+  end
+  object DataSource2: TDataSource
+    DataSet = ZTable1
+    Left = 568
+    Top = 424
   end
 end

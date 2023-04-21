@@ -14,14 +14,15 @@ type
 
   TForm1 = class(TForm)
     DataSource1: TDataSource;
+    DataSource2: TDataSource;
     DBEdit1: TDBEdit;
-    DBEdit2: TDBEdit;
     DBGrid1: TDBGrid;
+    DBGrid2: TDBGrid;
     DBNavigator1: TDBNavigator;
-    Label1: TLabel;
-    Label2: TLabel;
+    DBNavigator2: TDBNavigator;
     ZConnection1: TZConnection;
     ZQuery1: TZQuery;
+    ZTable1: TZTable;
     procedure FormCreate(Sender: TObject);
   private
 

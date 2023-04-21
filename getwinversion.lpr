@@ -19,7 +19,6 @@ begin
   // Accedemos al tercer elemento del arreglo a través del puntero
   p[2] := 5;
   i := p[2];
-  // El índice 2 corresponde al tercer elemento, ya que los índices de arreglos en Pascal comienzan en cero
 
   // Hacemos algo con el valor obtenido
   writeLn('El tercer elemento del arreglo es: ', i);
