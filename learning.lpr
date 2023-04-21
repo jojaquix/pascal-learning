@@ -60,6 +60,33 @@ begin
   writeln;
 end;
 
+
+procedure PointersAndRecords;
+type
+  MyRecord = record
+    b1,b2 : Byte
+  end;
+  MyPacketRecord = packed record
+    b1, b2 : Byte
+  end;
+
+var
+  pointer : PByte;
+  myRec : MyRecord;
+  myPacRec : MyPacketRecord;
+begin
+  myRec.b1:=1;
+  myRec.b2:=2;
+  myPacRec.b1:=6;
+  myPacRec.b2:=8;
+
+  pointer := @MyRec.b1;
+  writeln('Printing record values:');
+  writeln('Unpacked:');
+  write('b1 ', pointer^, ' b2 ', (pointer+1)^);
+  writeln;
+end;
+
 procedure ArraysofArraysUse;
 var
   myMatrix : array of array of Int32;
@@ -100,6 +127,7 @@ end;
 begin
   inOut;
   strUse;
+  PointersAndRecords;
   ArraysofArraysUse;
   readln;
 end.
