@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 508
+  Left = 339
   Height = 484
-  Top = 194
+  Top = 103
   Width = 702
   Caption = 'Form1'
   ClientHeight = 484
@@ -108,7 +108,6 @@ object Form1: TForm1
   end
   object ZQuery1: TZQuery
     Connection = ZConnection1
-    Active = True
     SQL.Strings = (
       'select * from departments'
     )
@@ -118,6 +117,7 @@ object Form1: TForm1
   end
   object ZTable1: TZTable
     Connection = ZConnection1
+    Active = True
     TableName = 'public.employees'
     Left = 520
     Top = 424

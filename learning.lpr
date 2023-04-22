@@ -25,6 +25,9 @@ program learning;
  https://wiki.freepascal.org/Lazarus_IDE_Tools
 }
 
+{$H+}
+{$modeSwitch advancedRecords}
+
 procedure inOut;
 var
   myStr: String; //by default strings are utf8 strings

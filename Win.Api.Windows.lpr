@@ -1,6 +1,7 @@
 program Win.Api.Windows;
 
-{$mode delphi}{$H+}
+{$mode delphi}
+{$H+}  // String is an alias for AnsiString
 {$apptype gui}
 
 uses
